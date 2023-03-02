@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+   .xml dosyaları TestNG framework'ümüzdeki
+   istediğimiz class,package, test method'u veya grupları
+   toplu olarak çalıştırma imkanı verir.
+
+   Çalışmasınıistediğimiz dosyaları
+   test hiyerarşisine uygun olarak .xml dosyamıza ekleriz
+-->
+
+<suite name="istenen classlari calistirma">
+    <test name="smoke test">
+
+        <classes>
+            <class name="tests.day11_POM_assertions.C03_NegatifLoginTesti"></class>
+            <class name="tests.day11_POM_assertions.C02_PozitifLoginTesti"></class>
+
+        </classes>
+
+    </test>
+</suite>

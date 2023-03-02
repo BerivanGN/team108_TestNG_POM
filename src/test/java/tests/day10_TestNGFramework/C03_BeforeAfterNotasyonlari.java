@@ -40,10 +40,7 @@ public class C03_BeforeAfterNotasyonlari {
         System.out.println("Before method");
     }
     @Test
-    public void test01(){
-        System.out.println("test1");
-
-    }
+    public void test01(){System.out.println("test1");}
     @Test
     public void test02(){
         System.out.println("test2");
@@ -61,7 +58,7 @@ public class C03_BeforeAfterNotasyonlari {
         System.out.println("After test");
     }
 
-    @AfterClass
+    @AfterClass (groups = "smoke")
     public void afterClasses(){
         System.out.println("After classes");
     }

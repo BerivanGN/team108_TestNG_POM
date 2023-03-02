@@ -13,7 +13,7 @@ public class C04_FaceebookLogin {
     //3- Faker class’ini kullanarak email ve sifre degerlerini yazdirip, giris butonuna basin
     //4- Basarili giris yapilamadigini test edin
 
-    @Test
+    @Test (groups = "smoke")
     public void facebookTesti(){
         //1 - https://www.facebook.com/ adresine gidin
         Driver.getDriver().get("https://www.facebook.com/");
