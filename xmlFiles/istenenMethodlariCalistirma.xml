@@ -12,9 +12,12 @@
     <test name="mini smoke">
 
         <classes>
+
             <class name="tests.day11_POM_assertions.C03_NegatifLoginTesti">
+
                 <methods>
                     <include name="negatifLogin3"></include>
+                    <exclude name=""></exclude>
                 </methods>
             </class>
             <class name="tests.day11_POM_assertions.C02_PozitifLoginTesti"></class>
