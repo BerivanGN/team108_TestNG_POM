@@ -9,31 +9,22 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
-public class Driver {
-    Driver(){
+public class DriverCross {
+    private DriverCross(){
 
     }
 
-    /* Daha fazla kontrol imkanı ve extends kullanmadan driver'a ulaşmak için
-       webDriver objesini Driver class'ındaki statik bir method ile oluşturacağız
-
-       Ancak getDriver() her kullanıldığında yeni bir driver oluşturuyor
-       bunu engellemek için ve kodun düzgün çalışmasını sağlamak için
-       ilk kullanımda driver=new ChromeDriver(); kodu çalışsın
-       sonraki kullanımlarda çalışmasın diye bir yöntem geliştirmeliyiz.
-     */
-
     public static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver(String browser){
 
-        String istenenBrowser = ConfigReader.getProperty("browser");
+        browser = browser==null ? ConfigReader.getProperty("browser") : browser;
 
 
 
         if (driver==null){
 
-            switch (istenenBrowser){
+            switch (browser){
                 case "firefox" :
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
@@ -47,7 +38,6 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
                 default:
-                    System.setProperty("webdriver.http.factory", "jdk-http-client");
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
 
@@ -77,7 +67,4 @@ public class Driver {
         }
 
     }
-
-
-
 }
